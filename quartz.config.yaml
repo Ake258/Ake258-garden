@@ -14,12 +14,12 @@ configuration:
     - .obsidian
     - .nomedia
   theme:
-    fontOrigin: googleFonts
-    cdnCaching: true
+    fontOrigin: local
+    cdnCaching: false
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      header: "LXGW WenKai Screen Lora"
+      body: "LXGW WenKai Screen Lora"
+      code: "LXGW WenKai Screen Lora"
     colors:
       lightMode:
         light: "#faf8f8"
