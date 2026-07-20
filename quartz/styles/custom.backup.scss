@@ -1,0 +1,35 @@
+@use "./variables.scss" as *;
+
+// ============================================
+// 自定义字体：霞鹜文楷屏幕版 + Lora
+// ============================================
+@font-face {
+  font-family: "LXGW WenKai Screen Lora";
+  src: url("/static/fonts/LXGWWenKaiScreen-Lora.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// 全局应用字体
+body {
+  font-family: "LXGW WenKai Screen Lora", serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "LXGW WenKai Screen Lora", serif !important;
+}
+
+code, pre, code[class*="language-"], .katex {
+  font-family: "LXGW WenKai Screen Lora", monospace !important;
+}
+
+// 可选：调整字号让中文更舒适
+body, p, li, td, th {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
