@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Ake258 口腔医学知识库
+  pageTitle: Ake258 ;-)
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
