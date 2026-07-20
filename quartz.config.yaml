@@ -99,7 +99,7 @@ plugins:
   - source: github:quartz-community/favicon
     enabled: true
   - source: github:quartz-community/og-image
-    enabled: true
+    enabled: false
   - source: github:quartz-community/cname
     enabled: true
   - source: github:quartz-community/content-page
@@ -190,14 +190,10 @@ plugins:
       position: beforeBody
       priority: 15
       display: all
-  - source: github:quartz-community/not-found-page
-    enabled: true
-  - source: github:quartz-community/assets
-    enabled: true
-  - source: github:quartz-community/static
-    enabled: true
-  - source: github:quartz-community/component-resources
-    enabled: true
+
+
+
+
   - source: github:quartz-community/reader-mode
     enabled: true
     layout:
