@@ -22,25 +22,25 @@ configuration:
       code: "LXGW WenKai Screen Lora"
     colors:
       lightMode:
-        light: "#f5f7f2"
-        lightgray: "#dce4d6"
-        gray: "#8b9a82"
-        darkgray: "#3d4a38"
-        dark: "#1e281c"
-        secondary: "#4a7c59"
-        tertiary: "#c5a55a"
-        highlight: rgba(74, 124, 89, 0.12)
-        textHighlight: "#d4e09588"
+        light: "#fcfaf4"
+        lightgray: "#e8e3d3"
+        gray: "#b8ad97"
+        darkgray: "#5c4e3d"
+        dark: "#3d3023"
+        secondary: "#8b6914"
+        tertiary: "#b8860b"
+        highlight: rgba(139, 105, 20, 0.10)
+        textHighlight: "#f0ddac88"
       darkMode:
-        light: "#1a1f17"
-        lightgray: "#2d352a"
-        gray: "#5c6e56"
-        darkgray: "#c4ccbf"
-        dark: "#e6ede1"
-        secondary: "#7ba886"
-        tertiary: "#d4b96a"
-        highlight: rgba(122, 168, 134, 0.15)
-        textHighlight: "#7a923088"
+        light: "#1f1b13"
+        lightgray: "#3d3528"
+        gray: "#8b7b6b"
+        darkgray: "#d4c8b8"
+        dark: "#f0e8d8"
+        secondary: "#d4a373"
+        tertiary: "#e6c070"
+        highlight: rgba(212, 163, 115, 0.12)
+        textHighlight: "#6b553088"
 plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true

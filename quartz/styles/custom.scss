@@ -21,7 +21,40 @@ h2 { font-size: 1.5rem; }
 h3 { font-size: 1.25rem; }
 
 /* ============================================
-   0. 首页 ASCII 装饰横幅
+   0. 点阵纸纹背景 + 暖纸配色
+   ============================================ */
+body {
+  background-image:
+    radial-gradient(circle, rgba(139, 105, 20, 0.08) 0.5px, transparent 0.5px);
+  background-size: 22px 22px;
+}
+
+/* 暗色模式：点阵调暗 */
+:root[saved-theme="dark"] body {
+  background-image:
+    radial-gradient(circle, rgba(200, 180, 140, 0.06) 0.5px, transparent 0.5px);
+}
+
+/* ============================================
+   0.1 首页 ASCII 装饰横幅
+   ============================================ */
+.home-ascii-banner {
+  text-align: center;
+  font-family: "Courier New", "LXGW WenKai Screen Lora", monospace;
+  font-size: 0.55rem;
+  line-height: 1.15;
+  color: var(--gray);
+  opacity: 0.85;
+  margin: 0 0 0.5rem;
+  user-select: none;
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  .home-ascii-banner {
+    font-size: 0.38rem;
+  }
+}
    ============================================ */
 .home-ascii-banner {
   text-align: center;
