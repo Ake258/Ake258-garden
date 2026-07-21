@@ -21,7 +21,7 @@ h2 { font-size: 1.5rem; }
 h3 { font-size: 1.25rem; }
 
 /* ============================================
-   0. 点阵纸纹背景 + 暖纸配色
+   0. 点阵纸纹背景
    ============================================ */
 body {
   background-image:
@@ -29,8 +29,7 @@ body {
   background-size: 22px 22px;
 }
 
-/* 暗色模式：点阵调暗 */
-:root[saved-theme="dark"] body {
+[saved-theme="dark"] body {
   background-image:
     radial-gradient(circle, rgba(200, 180, 140, 0.06) 0.5px, transparent 0.5px);
 }
@@ -51,27 +50,7 @@ body {
 }
 
 @media (max-width: 800px) {
-  .home-ascii-banner {
-    font-size: 0.38rem;
-  }
-}
-   ============================================ */
-.home-ascii-banner {
-  text-align: center;
-  font-family: "Courier New", "LXGW WenKai Screen Lora", monospace;
-  font-size: 0.55rem;
-  line-height: 1.15;
-  color: var(--gray);
-  opacity: 0.85;
-  margin: 0 0 0.5rem;
-  user-select: none;
-  overflow: hidden;
-}
-
-@media (max-width: 800px) {
-  .home-ascii-banner {
-    font-size: 0.38rem;
-  }
+  .home-ascii-banner { font-size: 0.38rem; }
 }
 
 /* ============================================
@@ -95,9 +74,7 @@ a.internal:hover {
   color: var(--tertiary) !important;
 }
 
-a.external {
-  transition: color 0.2s ease;
-}
+a.external { transition: color 0.2s ease; }
 
 /* ============================================
    2. 引用块美化
@@ -116,28 +93,14 @@ blockquote p:last-child { margin-bottom: 0; }
 /* ============================================
    3. 表格斑马纹
    ============================================ */
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-thead tr {
-  background: color-mix(in srgb, var(--secondary) 12%, var(--light));
-}
-
-tbody tr:nth-child(even) {
-  background: color-mix(in srgb, var(--lightgray) 40%, var(--light));
-}
-
+table { border-collapse: collapse; width: 100%; }
+thead tr { background: color-mix(in srgb, var(--secondary) 12%, var(--light)); }
+tbody tr:nth-child(even) { background: color-mix(in srgb, var(--lightgray) 40%, var(--light)); }
 tbody tr:hover {
   background: color-mix(in srgb, var(--secondary) 8%, var(--light));
   transition: background 0.2s ease;
 }
-
-th, td {
-  padding: 0.6rem 0.8rem;
-  text-align: left;
-}
+th, td { padding: 0.6rem 0.8rem; text-align: left; }
 
 /* ============================================
    4. 代码块圆角 + 阴影
@@ -147,10 +110,7 @@ pre {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   border: 1px solid var(--lightgray) !important;
 }
-
-code {
-  border-radius: 4px;
-}
+code { border-radius: 4px; }
 
 /* ============================================
    5. 页面顶部滚动进度条
@@ -175,7 +135,6 @@ img:not(.graph img) {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 img:not(.graph img):hover {
   transform: scale(1.01);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
@@ -199,7 +158,6 @@ article {
   border: 1px solid var(--lightgray);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-
 .search > .search-button:focus-within {
   border-color: var(--secondary);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--secondary) 20%, transparent);
@@ -208,23 +166,23 @@ article {
 /* ============================================
    9. 平滑滚动
    ============================================ */
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 /* ============================================
-   10. 选中文本颜色
+   10. 加粗文字增强
    ============================================ */
+strong, b { font-weight: 700; color: var(--dark); }
+
 /* ============================================
-   11. 加粗文字增强
+   11. 选中文本颜色
    ============================================ */
-strong, b {
-  font-weight: 700;
+::selection {
+  background: color-mix(in srgb, var(--tertiary) 30%, transparent);
   color: var(--dark);
 }
 
 /* ============================================
-   13. 笔记属性平铺（取消折叠）
+   12. 笔记属性平铺（取消折叠）
    ============================================ */
 details.note-properties {
   border: 1px solid var(--lightgray);
@@ -233,21 +191,13 @@ details.note-properties {
   margin: 0.5rem 0 1rem;
   background: none;
 }
-
-details.note-properties > summary {
-  display: none;
-}
-
-details.note-properties .note-properties-table {
-  margin: 0;
-}
-
+details.note-properties > summary { display: none; }
+details.note-properties .note-properties-table { margin: 0; }
 details.note-properties .note-properties-row td {
   padding: 0.25rem 0.5rem;
   border-bottom: none;
   font-size: 0.88rem;
 }
-
 details.note-properties .note-properties-key {
   color: var(--gray);
   text-align: right;
@@ -255,11 +205,4 @@ details.note-properties .note-properties-key {
   white-space: nowrap;
   font-weight: 600;
 }
-
-details.note-properties .note-properties-value {
-  color: var(--darkgray);
-}
-::selection {
-  background: color-mix(in srgb, var(--tertiary) 30%, transparent);
-  color: var(--dark);
-}
+details.note-properties .note-properties-value { color: var(--darkgray); }
