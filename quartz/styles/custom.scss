@@ -228,23 +228,20 @@ img:not(.graph img):hover {
    ============================================ */
 html { scroll-behavior: smooth; }
 
-/* 侧边栏滚动条：默认隐藏，鼠标移入显示极细条 */
+/* 侧边栏滚动条：常驻占位，默认透明，鼠标移入浮现 */
 .explorer-ul,
 .toc-content {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar { width: 0; height: 0; }
-}
-.explorer-ul:hover,
-.toc-content:hover {
+  scrollbar-gutter: stable;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
   &::-webkit-scrollbar { width: 4px; }
-  &::-webkit-scrollbar-thumb {
-    background: var(--gray);
-    border-radius: 2px;
-  }
+  &::-webkit-scrollbar-thumb { background: transparent; border-radius: 2px; }
   &::-webkit-scrollbar-track { background: transparent; }
+}
+.explorer-ul:hover,
+.toc-content:hover {
+  scrollbar-color: var(--gray) transparent;
+  &::-webkit-scrollbar-thumb { background: var(--gray); }
 }
 
 /* ============================================
