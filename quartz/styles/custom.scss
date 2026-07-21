@@ -55,19 +55,14 @@ body {
 }
 
 /* ============================================
-   0.2 #9CA665 横幅：包裹笔记标题与信息栏
+   0.2 #9CA665 横幅：标题 + 信息栏（不碰面包屑和属性）
    ============================================ */
-.page-header {
-  background: #9CA665;
-  border-radius: 6px;
-  padding: 0.6rem 1.2rem 0.3rem;
-  margin-bottom: 1rem;
-  overflow: hidden;
-}
-
 .page-header .article-title {
+  background: #9CA665;
   color: #fff !important;
-  margin: 0 0 0.2rem 0 !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px 6px 0 0;
+  margin: 0 !important;
   font-size: 1.6rem;
 }
 
@@ -75,11 +70,17 @@ body {
   color: #fff !important;
 }
 
+.page-header .content-meta {
+  background: color-mix(in srgb, #9CA665 10%, var(--light));
+  padding: 0.3rem 1.2rem;
+  border-radius: 0 0 6px 6px;
+  margin: 0 0 1rem 0;
+  font-size: 0.85rem;
+}
+
 .page-header .content-meta,
 .page-header .content-meta * {
-  color: rgba(255,255,255,0.8) !important;
-  font-size: 0.85rem;
-  margin: 0;
+  color: var(--gray) !important;
 }
 
 /* ============================================
