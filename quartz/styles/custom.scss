@@ -228,12 +228,22 @@ img:not(.graph img):hover {
    ============================================ */
 html { scroll-behavior: smooth; }
 
+/* 侧边栏隐藏滚动条（探索 + 目录）*/
+.explorer-content,
+.toc {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.explorer-content::-webkit-scrollbar,
+.toc::-webkit-scrollbar {
+  display: none;
+}
+
 /* ============================================
    10. 加粗文字：绿色、大号、加重
    ============================================ */
 strong, b {
-  font-weight: 800;
-  font-size: 1.08em;
+  font-weight: 900;
   color: var(--secondary);
 }
 
