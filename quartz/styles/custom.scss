@@ -21,29 +21,23 @@ h2 { font-size: 1.5rem; }
 h3 { font-size: 1.25rem; }
 
 /* ============================================
-   0. 首页头图横幅（仅首页）
+   0. 首页 ASCII 装饰横幅
    ============================================ */
-.home-banner {
-  width: 100%;
-  height: 200px;
-  margin-bottom: 1.5rem;
-  border-radius: 10px;
-  background-image: url("/static/meihua.jpg");
-  background-size: cover;
-  background-position: center 35%;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--lightgray);
-  opacity: 0;
-  animation: banner-fade-in 0.8s ease 0.15s forwards;
-}
-
-@keyframes banner-fade-in {
-  to { opacity: 1; }
+.home-ascii-banner {
+  text-align: center;
+  font-family: "Courier New", "LXGW WenKai Screen Lora", monospace;
+  font-size: 0.55rem;
+  line-height: 1.15;
+  color: var(--gray);
+  opacity: 0.85;
+  margin: 0 0 0.5rem;
+  user-select: none;
+  overflow: hidden;
 }
 
 @media (max-width: 800px) {
-  .home-banner {
-    height: 140px;
+  .home-ascii-banner {
+    font-size: 0.38rem;
   }
 }
 
@@ -197,8 +191,41 @@ strong, b {
 }
 
 /* ============================================
-   12. 选中文本颜色
+   13. 笔记属性平铺（取消折叠）
    ============================================ */
+details.note-properties {
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin: 0.5rem 0 1rem;
+  background: none;
+}
+
+details.note-properties > summary {
+  display: none;
+}
+
+details.note-properties .note-properties-table {
+  margin: 0;
+}
+
+details.note-properties .note-properties-row td {
+  padding: 0.25rem 0.5rem;
+  border-bottom: none;
+  font-size: 0.88rem;
+}
+
+details.note-properties .note-properties-key {
+  color: var(--gray);
+  text-align: right;
+  padding-right: 0.75rem;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+details.note-properties .note-properties-value {
+  color: var(--darkgray);
+}
 ::selection {
   background: color-mix(in srgb, var(--tertiary) 30%, transparent);
   color: var(--dark);

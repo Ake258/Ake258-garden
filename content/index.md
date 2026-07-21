@@ -5,8 +5,6 @@ title: 首页
 date: 2026-07-20
 ---
 
-<div class="home-banner"></div>
-
 Ake 258 医学知识库，采用 **MOC + Cards** 构建完全扁平的知识网络。
 
 ## 知识总览

@@ -177,6 +177,7 @@ plugins:
     enabled: true
     options:
       includeAll: false
+      collapsed: false
       includedProperties:
         - description
         - tags
