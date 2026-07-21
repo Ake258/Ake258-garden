@@ -228,26 +228,30 @@ img:not(.graph img):hover {
    ============================================ */
 html { scroll-behavior: smooth; }
 
-/* 侧边栏滚动条：隐层 + 美化（兜底） */
-.explorer-content,
-.toc,
-.overflow-end {
+/* 侧边栏滚动条：默认隐藏，鼠标移入显示极细条 */
+.explorer-ul,
+.toc-content {
   scrollbar-width: none;
   -ms-overflow-style: none;
-  &::-webkit-scrollbar { display: none; }
-}
-/* 兜底：如果上面没命中，将滚动条压到极窄透明 */
-.explorer-content,
-.toc {
-  overflow-y: auto;
   &::-webkit-scrollbar { width: 0; height: 0; }
+}
+.explorer-ul:hover,
+.toc-content:hover {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  &::-webkit-scrollbar { width: 4px; }
+  &::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-track { background: transparent; }
 }
 
 /* ============================================
    10. 加粗文字：绿色、大号、加重
    ============================================ */
 strong, b {
-  font-weight: 900;
+  font-weight: 700;
   color: var(--secondary);
 }
 
