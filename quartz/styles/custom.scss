@@ -67,7 +67,7 @@ body {
 }
 .page-header .article-title a { color: #fff !important; }
 
-/* 属性区：绿底 + 白字 + 左对齐 */
+/* 属性区：绿底 + 白字，布局完全交还原生 */
 .page-header .note-properties {
   background: #9CA665;
   border: none !important;
@@ -76,17 +76,12 @@ body {
   margin: 0;
 }
 .page-header .note-properties > summary { display: none; }
-.page-header .note-properties .note-properties-table {
-  table-layout: auto !important;
-}
+
 .page-header .note-properties .note-properties-key {
-  width: auto !important;
   color: rgba(255, 255, 255, 0.7) !important;
   font-weight: 600;
-  white-space: nowrap;
 }
 .page-header .note-properties .note-properties-row td {
-  text-align: left;
   padding: 0.15rem 0.5rem 0.15rem 0;
   font-size: 0.85rem;
   background: transparent !important;
@@ -234,9 +229,13 @@ img:not(.graph img):hover {
 html { scroll-behavior: smooth; }
 
 /* ============================================
-   10. 加粗文字增强
+   10. 加粗文字：绿色、大号、加重
    ============================================ */
-strong, b { font-weight: 700; color: var(--dark); }
+strong, b {
+  font-weight: 800;
+  font-size: 1.08em;
+  color: var(--secondary);
+}
 
 /* ============================================
    11. 选中文本颜色
@@ -247,9 +246,8 @@ strong, b { font-weight: 700; color: var(--dark); }
 }
 
 /* ============================================
-   12. 笔记属性平铺：去边框、去底色、左对齐、隐藏空行
+   12. 非文章页属性区：去边框包裹（对齐风格）
    ============================================ */
-/* 非 article 页面的属性区也去掉原生边框包裹 */
 details.note-properties {
   border: none;
   border-radius: 0;
@@ -259,25 +257,16 @@ details.note-properties {
 }
 details.note-properties > summary { display: none; }
 details.note-properties .note-properties-table {
-  table-layout: auto !important;
   margin: 0;
   border-collapse: collapse;
 }
 details.note-properties .note-properties-key {
-  width: auto !important;
   color: var(--gray);
   font-weight: 600;
   white-space: nowrap;
-  text-align: left;
 }
 details.note-properties .note-properties-row td {
-  text-align: left;
   padding: 0.2rem 0.5rem 0.2rem 0;
   border: none;
   font-size: 0.88rem;
-}
-/* 隐藏空值行 */
-.note-properties-row:has(.note-properties-value:empty),
-.note-properties-row:has(.note-properties-value > :only-child:empty) {
-  display: none;
 }
