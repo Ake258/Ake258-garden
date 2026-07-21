@@ -21,17 +21,19 @@ h2 { font-size: 1.5rem; }
 h3 { font-size: 1.25rem; }
 
 /* ============================================
-   0. 点阵背景（仿子弹日记圆点纸）
+   0. 方格纸背景（仿坐标纸）
    ============================================ */
 body {
   background-image:
-    radial-gradient(circle, rgba(122, 142, 61, 0.22) 1.8px, transparent 1.8px);
+    linear-gradient(rgba(122, 142, 61, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(122, 142, 61, 0.12) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
 [saved-theme="dark"] body {
   background-image:
-    radial-gradient(circle, rgba(180, 175, 160, 0.1) 1.8px, transparent 1.8px);
+    linear-gradient(rgba(150, 145, 130, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(150, 145, 130, 0.08) 1px, transparent 1px);
 }
 
 /* ============================================
@@ -215,27 +217,31 @@ strong, b { font-weight: 700; color: var(--dark); }
 }
 
 /* ============================================
-   12. 笔记属性平铺（取消折叠）
+   12. 笔记属性完全平铺（无包裹、无边框、无底色）
    ============================================ */
 details.note-properties {
-  border: 1px solid var(--lightgray);
-  border-radius: 8px;
-  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   margin: 0.5rem 0 1rem;
   background: none;
 }
 details.note-properties > summary { display: none; }
-details.note-properties .note-properties-table { margin: 0; }
+details.note-properties .note-properties-table {
+  margin: 0;
+  border-collapse: collapse;
+}
 details.note-properties .note-properties-row td {
-  padding: 0.25rem 0.5rem;
-  border-bottom: none;
+  padding: 0.2rem 0.5rem 0.2rem 0;
+  border: none;
   font-size: 0.88rem;
 }
 details.note-properties .note-properties-key {
   color: var(--gray);
-  text-align: right;
-  padding-right: 0.75rem;
-  white-space: nowrap;
   font-weight: 600;
+  white-space: nowrap;
+  text-align: left;
 }
-details.note-properties .note-properties-value { color: var(--darkgray); }
+details.note-properties .note-properties-value {
+  color: var(--darkgray);
+}
