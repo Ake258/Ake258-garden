@@ -108,6 +108,7 @@ body {
 .page-header .note-properties .note-properties-row td {
   padding: 0.15rem 0.5rem 0.15rem 0;
   font-size: 0.85rem;
+  text-align: left;
 }
 
 .page-header .note-properties .note-properties-key {
@@ -118,6 +119,29 @@ body {
 
 .page-header .note-properties .note-properties-value {
   color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* 绿卡内所有链接统一亮色 */
+.page-header .note-properties .note-properties-value a,
+.page-header .note-properties .tag-link,
+.page-header .note-properties a.internal {
+  color: rgba(255, 255, 255, 0.9) !important;
+  background: transparent !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+}
+
+.page-header .note-properties .note-properties-value a:hover,
+.page-header .note-properties a.internal:hover {
+  color: #fff !important;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+/* 绿卡内分隔符（逗号等）*/ 
+.page-header .note-properties .content-meta,
+.page-header .note-properties .content-meta * {
+  color: rgba(255, 255, 255, 0.55) !important;
 }
 
 /* 信息栏：绿卡底部 */
