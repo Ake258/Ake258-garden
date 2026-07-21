@@ -179,12 +179,9 @@ plugins:
       includeAll: false
       collapsed: false
       includedProperties:
-        - 学科
-        - 章节
+        - description
         - tags
         - aliases
-        - created
-        - updated
       excludedProperties: []
       hidePropertiesView: false
       delimiters: "---"

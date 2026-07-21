@@ -55,14 +55,19 @@ body {
 }
 
 /* ============================================
-   0.2 #9CA665 横幅：标题 + 信息栏（不碰面包屑和属性）
+   0.2 #9CA665 横幅：标题 + 属性 + 信息栏
    ============================================ */
-.page-header .article-title {
+.page-header {
   background: #9CA665;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem 0.4rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.page-header .article-title {
   color: #fff !important;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px 6px 0 0;
-  margin: 0 !important;
+  margin: 0 0 0.25rem 0 !important;
   font-size: 1.6rem;
 }
 
@@ -70,17 +75,44 @@ body {
   color: #fff !important;
 }
 
-.page-header .content-meta {
-  background: color-mix(in srgb, #9CA665 10%, var(--light));
-  padding: 0.3rem 1.2rem;
-  border-radius: 0 0 6px 6px;
-  margin: 0 0 1rem 0;
+/* 属性区：透明继承绿底，白字 */
+.page-header .note-properties {
+  border: none !important;
+  background: transparent !important;
+  padding: 0;
+  margin: 0 0 0.2rem 0;
+}
+
+.page-header .note-properties > summary {
+  display: none;
+}
+
+.page-header .note-properties * {
+  background: transparent !important;
+  border: none !important;
+}
+
+.page-header .note-properties .note-properties-row td {
+  padding: 0.15rem 0.5rem 0.15rem 0;
   font-size: 0.85rem;
 }
 
+.page-header .note-properties .note-properties-key {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.page-header .note-properties .note-properties-value {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* 信息栏：日期/阅读时间 */
 .page-header .content-meta,
 .page-header .content-meta * {
-  color: var(--gray) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-size: 0.8rem;
+  margin: 0;
 }
 
 /* ============================================
