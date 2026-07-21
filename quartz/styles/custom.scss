@@ -21,6 +21,35 @@ h2 { font-size: 1.5rem; }
 h3 { font-size: 1.25rem; }
 
 /* ============================================
+   0. 首页头图横幅
+   ============================================ */
+article::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  background-image: url("/static/meihua.png");
+  background-size: cover;
+  background-position: center 35%;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--lightgray);
+  opacity: 0;
+  animation: banner-fade-in 0.8s ease 0.15s forwards;
+}
+
+@keyframes banner-fade-in {
+  to { opacity: 1; }
+}
+
+@media (max-width: 800px) {
+  article::before {
+    height: 140px;
+  }
+}
+
+/* ============================================
    1. 链接悬停下划线动画
    ============================================ */
 a.internal {
