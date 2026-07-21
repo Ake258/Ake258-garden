@@ -57,26 +57,29 @@ body {
 /* ============================================
    0.2 #9CA665 横幅：包裹笔记标题与信息栏
    ============================================ */
-article > h1:first-of-type {
+.page-header {
   background: #9CA665;
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px 6px 0 0;
-  margin: 0 !important;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem 0.3rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.page-header .article-title {
+  color: #fff !important;
+  margin: 0 0 0.2rem 0 !important;
   font-size: 1.6rem;
 }
 
-article > h1:first-of-type a {
+.page-header .article-title a {
   color: #fff !important;
 }
 
-/* 信息栏（日期/标签）接在标题横幅下面，同色系浅底色 */
-.content-meta {
-  background: color-mix(in srgb, #9CA665 12%, var(--light));
-  padding: 0.4rem 1.2rem;
-  border-radius: 0 0 6px 6px;
-  margin: 0 0 1rem 0;
-  border-left: 3px solid #9CA665;
+.page-header .content-meta,
+.page-header .content-meta * {
+  color: rgba(255,255,255,0.8) !important;
+  font-size: 0.85rem;
+  margin: 0;
 }
 
 /* ============================================
