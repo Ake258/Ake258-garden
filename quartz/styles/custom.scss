@@ -314,9 +314,10 @@ details.note-properties .note-properties-key {
   display: none;
 }
 
-/* 强制左对齐所有属性值及内部元素 */
-.note-properties .note-properties-row td,
-.note-properties .note-properties-value,
-.note-properties .note-properties-value * {
-  text-align: left !important;
+/* value 列自适应宽度，去掉 table-layout: fixed 引起的居中错觉 */
+.note-properties-table {
+  table-layout: auto !important;
+}
+.note-properties .note-properties-key {
+  width: auto !important;
 }
