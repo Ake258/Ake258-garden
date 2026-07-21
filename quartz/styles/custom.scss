@@ -230,7 +230,8 @@ html { scroll-behavior: smooth; }
 
 /* 侧边栏滚动条：常驻占位，默认透明，鼠标移入浮现 */
 .explorer-ul,
-.toc-content {
+.toc-content,
+.overflow {
   scrollbar-gutter: stable;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
@@ -239,7 +240,8 @@ html { scroll-behavior: smooth; }
   &::-webkit-scrollbar-track { background: transparent; }
 }
 .explorer-ul:hover,
-.toc-content:hover {
+.toc-content:hover,
+.overflow:hover {
   scrollbar-color: var(--gray) transparent;
   &::-webkit-scrollbar-thumb { background: var(--gray); }
 }
