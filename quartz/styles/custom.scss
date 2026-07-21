@@ -21,17 +21,17 @@ h2 { font-size: 1.5rem; }
 h3 { font-size: 1.25rem; }
 
 /* ============================================
-   0. 点阵纸纹背景
+   0. 点阵背景（仿子弹日记圆点纸）
    ============================================ */
 body {
   background-image:
-    radial-gradient(circle, rgba(160, 157, 152, 0.18) 1px, transparent 1px);
-  background-size: 20px 20px;
+    radial-gradient(circle, rgba(122, 142, 61, 0.22) 1.8px, transparent 1.8px);
+  background-size: 28px 28px;
 }
 
 [saved-theme="dark"] body {
   background-image:
-    radial-gradient(circle, rgba(180, 175, 165, 0.1) 1px, transparent 1px);
+    radial-gradient(circle, rgba(180, 175, 160, 0.1) 1.8px, transparent 1.8px);
 }
 
 /* ============================================
@@ -141,17 +141,7 @@ img:not(.graph img):hover {
 }
 
 /* ============================================
-   7. 内容卡片阴影
-   ============================================ */
-article {
-  background: var(--light);
-  border-radius: 12px;
-  padding: 1.5rem 2rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 2px 12px rgba(0, 0, 0, 0.04);
-}
-
-/* ============================================
-   8. 搜索框 / 侧边栏微调
+   7. 搜索框 / 侧边栏微调
    ============================================ */
 .search > .search-button {
   border-radius: 8px;
