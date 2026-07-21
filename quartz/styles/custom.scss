@@ -54,19 +54,6 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* ASCII 彩蛋：UNINSTALLING Obsidian */
-.page-title::after {
-  content: "UNINSTALLING Obsidian\a \2587\2587\2587\2587\2587\2587\2587\2587\2587\2587\2587\2587\2587\2587\25a2\a \256d\2501\256e\256d\2501\256e\256d\256e \2571\a \2570\2501\252b\2570\2501\252b\2570\256f\2571\256d\256e\a \2570\2501\256f\2570\2501\256f \2571 \2570\256f\a COMPLETE";
-  display: block;
-  white-space: pre;
-  font-family: monospace;
-  font-size: 0.6rem;
-  color: rgba(156, 166, 101, 0.55);
-  line-height: 1.3;
-  margin-top: 0.4rem;
-  text-align: left;
-}
-
 /* ============================================
    0.2 #9CA665 大色卡：标题 + 属性 + 信息栏（面包屑在外）
    ============================================ */
@@ -325,4 +312,11 @@ details.note-properties .note-properties-key {
 .note-properties-row:has(.note-properties-value:empty),
 .note-properties-row:has(.note-properties-value > :only-child:empty) {
   display: none;
+}
+
+/* 强制左对齐所有属性值及内部元素 */
+.note-properties .note-properties-row td,
+.note-properties .note-properties-value,
+.note-properties .note-properties-value * {
+  text-align: left !important;
 }
