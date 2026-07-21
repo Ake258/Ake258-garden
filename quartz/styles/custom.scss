@@ -6,7 +6,7 @@
 @font-face {
   font-family: "LXGW WenKai Screen Lora";
   src: url("/static/fonts/LXGWWenKaiScreen-Lora.woff2") format("woff2");
-  font-weight: 300 700;
+  font-weight: 300 900;
   font-style: normal;
   font-display: swap;
 }
@@ -228,15 +228,19 @@ img:not(.graph img):hover {
    ============================================ */
 html { scroll-behavior: smooth; }
 
-/* 侧边栏隐藏滚动条（探索 + 目录）*/
+/* 侧边栏滚动条：隐层 + 美化（兜底） */
 .explorer-content,
-.toc {
+.toc,
+.overflow-end {
   scrollbar-width: none;
   -ms-overflow-style: none;
+  &::-webkit-scrollbar { display: none; }
 }
-.explorer-content::-webkit-scrollbar,
-.toc::-webkit-scrollbar {
-  display: none;
+/* 兜底：如果上面没命中，将滚动条压到极窄透明 */
+.explorer-content,
+.toc {
+  overflow-y: auto;
+  &::-webkit-scrollbar { width: 0; height: 0; }
 }
 
 /* ============================================
