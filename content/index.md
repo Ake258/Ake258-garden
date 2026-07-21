@@ -1,12 +1,12 @@
 ---
 created: 26-07-20 16:41
-updated: 26-07-21 20:45
+updated: 26-07-21 21:04
 title: 首页
 date: 2026-07-20
 ---
 
 ```
-UNINSTALLING VALORANT
+UNINSTALLING Obsidian
 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▢
 　　╭━╮╭━╮╭╮　╱ 　　
 　　╰━┫╰━┫╰╯╱╭╮ 　　
