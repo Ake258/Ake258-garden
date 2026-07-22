@@ -1,7 +1,7 @@
 @use "./variables.scss" as *;
 
 /* ============================================
-   自定义字体：霞鹜文楷屏幕版 + Lora
+   0. 字体 & 方格背景
    ============================================ */
 @font-face {
   font-family: "LXGW WenKai Screen Lora";
@@ -11,7 +11,19 @@
   font-display: swap;
 }
 
-body { font-family: "LXGW WenKai Screen Lora", serif !important; }
+body {
+  font-family: "LXGW WenKai Screen Lora", serif !important;
+  background-image:
+    linear-gradient(rgba(122, 142, 61, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(122, 142, 61, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+[saved-theme="dark"] body {
+  background-image:
+    linear-gradient(rgba(150, 145, 130, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(150, 145, 130, 0.08) 1px, transparent 1px);
+}
+
 h1, h2, h3, h4, h5, h6 { font-family: "LXGW WenKai Screen Lora", serif !important; }
 code, pre, .katex { font-family: "LXGW WenKai Screen Lora", monospace !important; }
 
@@ -21,23 +33,7 @@ h2 { font-size: 1.5rem; }
 h3 { font-size: 1.25rem; }
 
 /* ============================================
-   0. 方格纸背景（仿坐标纸）
-   ============================================ */
-body {
-  background-image:
-    linear-gradient(rgba(122, 142, 61, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(122, 142, 61, 0.12) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-
-[saved-theme="dark"] body {
-  background-image:
-    linear-gradient(rgba(150, 145, 130, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(150, 145, 130, 0.08) 1px, transparent 1px);
-}
-
-/* ============================================
-   0.1 左上角 #9CA665 竖长方形色卡（PageTitle）
+   0.1 侧边栏 #9CA665 色卡（PageTitle）
    ============================================ */
 .page-title {
   background: #9CA665;
@@ -46,7 +42,6 @@ body {
   margin-bottom: 0.75rem;
   display: inline-block;
 }
-
 .page-title a {
   color: #fff !important;
   font-weight: 700;
@@ -55,7 +50,7 @@ body {
 }
 
 /* ============================================
-   0.2 #9CA665 大色卡：标题 + 属性 + 信息栏
+   0.2 文章页绿色横幅：标题 → 属性 → 日期
    ============================================ */
 .page-header .article-title {
   background: #9CA665;
@@ -67,16 +62,13 @@ body {
 }
 .page-header .article-title a { color: #fff !important; }
 
-/* 属性区：绿底 + 白字，布局完全交还原生 */
 .page-header .note-properties {
   background: #9CA665;
-  border: none !important;
+  border: none;
   border-radius: 0;
   padding: 0.25rem 1.2rem;
   margin: 0;
 }
-.page-header .note-properties > summary { display: none; }
-
 .page-header .note-properties .note-properties-key {
   color: rgba(255, 255, 255, 0.7) !important;
   font-weight: 600;
@@ -84,18 +76,16 @@ body {
 .page-header .note-properties .note-properties-row td {
   padding: 0.15rem 0.5rem 0.15rem 0;
   font-size: 0.85rem;
-  background: transparent !important;
-  border: none !important;
   color: rgba(255, 255, 255, 0.95) !important;
+  background: transparent !important;
 }
-.page-header .note-properties a,
-.page-header .note-properties .tag-link,
-.page-header .note-properties .note-properties-tags .tag-link {
+
+/* tag 链接在绿底上保持透明 */
+.page-header .note-properties .tag-link {
   color: rgba(255, 255, 255, 0.9) !important;
   background: transparent !important;
 }
 
-/* 信息栏：绿底底部 */
 .page-header .content-meta {
   background: #9CA665;
   border-radius: 0 0 6px 6px;
@@ -106,26 +96,7 @@ body {
 }
 
 /* ============================================
-   0.1 首页 ASCII 装饰横幅
-   ============================================ */
-.home-ascii-banner {
-  text-align: center;
-  font-family: "Courier New", "LXGW WenKai Screen Lora", monospace;
-  font-size: 0.55rem;
-  line-height: 1.15;
-  color: var(--gray);
-  opacity: 0.85;
-  margin: 0 0 0.5rem;
-  user-select: none;
-  overflow: hidden;
-}
-
-@media (max-width: 800px) {
-  .home-ascii-banner { font-size: 0.38rem; }
-}
-
-/* ============================================
-   1. 链接悬停下划线动画
+   1. 链接下划线动画
    ============================================ */
 a.internal {
   position: relative;
@@ -139,16 +110,14 @@ a.internal {
   background-repeat: no-repeat;
   transition: background-size 0.3s ease;
 }
-
 a.internal:hover {
   background-size: 100% 1.5px;
   color: var(--tertiary) !important;
 }
-
 a.external { transition: color 0.2s ease; }
 
 /* ============================================
-   2. 引用块美化
+   2. 引用块
    ============================================ */
 blockquote {
   border-left: 4px solid var(--secondary) !important;
@@ -157,17 +126,17 @@ blockquote {
   padding: 0.8rem 1.2rem !important;
   margin: 1.2rem 0;
 }
-
 blockquote p:first-child { margin-top: 0; }
-blockquote p:last-child { margin-bottom: 0; }
+blockquote p:last-child  { margin-bottom: 0; }
 
 /* ============================================
-   3. 表格斑马纹
+   3. 表格斑马纹（属性区除外）
    ============================================ */
 table { border-collapse: collapse; width: 100%; }
 thead tr { background: color-mix(in srgb, var(--secondary) 12%, var(--light)); }
-.note-properties-table tbody tr,
-tbody tr:nth-child(even) { background: color-mix(in srgb, var(--lightgray) 40%, var(--light)); }
+tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--lightgray) 40%, var(--light));
+}
 .note-properties-table tbody tr:nth-child(even) { background: transparent; }
 tbody tr:hover {
   background: color-mix(in srgb, var(--secondary) 8%, var(--light));
@@ -176,7 +145,7 @@ tbody tr:hover {
 th, td { padding: 0.6rem 0.8rem; text-align: left; }
 
 /* ============================================
-   4. 代码块圆角 + 阴影
+   4. 代码块
    ============================================ */
 pre {
   border-radius: 10px !important;
@@ -191,8 +160,7 @@ code { border-radius: 4px; }
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--secondary), var(--tertiary));
   z-index: 9999;
@@ -201,7 +169,7 @@ body::before {
 }
 
 /* ============================================
-   6. 图片美化
+   6. 图片
    ============================================ */
 img:not(.graph img) {
   border-radius: 8px;
@@ -214,7 +182,7 @@ img:not(.graph img):hover {
 }
 
 /* ============================================
-   7. 搜索框 / 侧边栏微调
+   7. 搜索框
    ============================================ */
 .search > .search-button {
   border-radius: 8px;
@@ -227,46 +195,34 @@ img:not(.graph img):hover {
 }
 
 /* ============================================
-   9. 平滑滚动
+   8. 侧边栏滚动条：占位 + 透明 → 移入浮现
    ============================================ */
 html { scroll-behavior: smooth; }
 
-/* 侧边栏滚动条：常驻占位，默认透明，鼠标移入浮现 */
-.explorer-ul,
-.toc-content,
-.overflow {
+.explorer-ul, .toc-content, .overflow {
   scrollbar-gutter: stable;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
-  &::-webkit-scrollbar { width: 4px; }
+  &::-webkit-scrollbar       { width: 4px; }
   &::-webkit-scrollbar-thumb { background: transparent; border-radius: 2px; }
   &::-webkit-scrollbar-track { background: transparent; }
 }
-.explorer-ul:hover,
-.toc-content:hover,
-.overflow:hover {
+.explorer-ul:hover, .toc-content:hover, .overflow:hover {
   scrollbar-color: var(--gray) transparent;
   &::-webkit-scrollbar-thumb { background: var(--gray); }
 }
 
 /* ============================================
-   10. 加粗文字：绿色、大号、加重
+   9. 加粗 & 选中文本
    ============================================ */
-strong, b {
-  font-weight: 700;
-  color: var(--secondary);
-}
-
-/* ============================================
-   11. 选中文本颜色
-   ============================================ */
+strong, b { font-weight: 700; color: var(--secondary); }
 ::selection {
   background: color-mix(in srgb, var(--tertiary) 30%, transparent);
   color: var(--dark);
 }
 
 /* ============================================
-   12. 非文章页属性区：去边框包裹（对齐风格）
+   10. 非文章页属性区：扁平无边框
    ============================================ */
 details.note-properties {
   border: none;
