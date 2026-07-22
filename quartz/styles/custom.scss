@@ -132,7 +132,8 @@ thead tr { background: color-mix(in srgb, var(--secondary) 12%, var(--light)); }
 tbody tr:nth-child(even) {
   background: color-mix(in srgb, var(--lightgray) 40%, var(--light));
 }
-.note-properties-table tbody tr:nth-child(even) { background: transparent; }
+/* 属性区表格所有行：不被斑马纹误伤 */
+.page-header .note-properties-table tbody tr { background: transparent !important; }
 tbody tr:hover {
   background: color-mix(in srgb, var(--secondary) 8%, var(--light));
   transition: background 0.2s ease;
@@ -243,7 +244,13 @@ details.note-properties .note-properties-row td {
 }
 
 /* ============================================
-   11. 暗色模式修正
+   11. 探索收起高度修复
+   ============================================ */
+/* 修复：收起状态用自然高度，不被 overflow:hidden 裁切标题按钮 */
+.explorer.collapsed { flex: 0 0 auto; min-height: unset; }
+
+/* ============================================
+   12. 暗色模式修正
    ============================================ */
 
 /* 方格背景：暗色下更克制的暖灰网格 */
@@ -277,7 +284,8 @@ details.note-properties .note-properties-row td {
   background: color-mix(in srgb, var(--secondary) 14%, var(--light));
 }
 
-/* 代码块 & 图片：暗色下浅色阴影 */
+/* 属性区暗色下也强制透明 */
+[saved-theme="dark"] .page-header .note-properties-table tbody tr { background: transparent !important; }
 [saved-theme="dark"] pre {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   border-color: var(--lightgray) !important;
