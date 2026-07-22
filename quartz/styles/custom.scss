@@ -89,7 +89,8 @@ body {
   color: rgba(255, 255, 255, 0.95) !important;
 }
 .page-header .note-properties a,
-.page-header .note-properties .tag-link {
+.page-header .note-properties .tag-link,
+.page-header .note-properties .note-properties-tags .tag-link {
   color: rgba(255, 255, 255, 0.9) !important;
   background: transparent !important;
 }
