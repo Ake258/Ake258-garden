@@ -166,7 +166,9 @@ blockquote p:last-child { margin-bottom: 0; }
    ============================================ */
 table { border-collapse: collapse; width: 100%; }
 thead tr { background: color-mix(in srgb, var(--secondary) 12%, var(--light)); }
+.note-properties-table tbody tr,
 tbody tr:nth-child(even) { background: color-mix(in srgb, var(--lightgray) 40%, var(--light)); }
+.note-properties-table tbody tr:nth-child(even) { background: transparent; }
 tbody tr:hover {
   background: color-mix(in srgb, var(--secondary) 8%, var(--light));
   transition: background 0.2s ease;
