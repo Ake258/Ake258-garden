@@ -18,11 +18,6 @@ body {
     linear-gradient(90deg, rgba(122, 142, 61, 0.12) 1px, transparent 1px);
   background-size: 28px 28px;
 }
-[saved-theme="dark"] body {
-  background-image:
-    linear-gradient(rgba(150, 145, 130, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(150, 145, 130, 0.08) 1px, transparent 1px);
-}
 
 h1, h2, h3, h4, h5, h6 { font-family: "LXGW WenKai Screen Lora", serif !important; }
 code, pre, .katex { font-family: "LXGW WenKai Screen Lora", monospace !important; }
@@ -70,19 +65,19 @@ h3 { font-size: 1.25rem; }
   margin: 0;
 }
 .page-header .note-properties .note-properties-key {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   font-weight: 600;
 }
 .page-header .note-properties .note-properties-row td {
   padding: 0.15rem 0.5rem 0.15rem 0;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.95) !important;
+  color: #fff !important;
   background: transparent !important;
 }
 
 /* tag 链接在绿底上保持透明 */
 .page-header .note-properties .tag-link {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
   background: transparent !important;
 }
 
@@ -91,7 +86,7 @@ h3 { font-size: 1.25rem; }
   border-radius: 0 0 6px 6px;
   padding: 0.25rem 1.2rem 0.5rem;
   margin: 0 0 1rem 0;
-  color: rgba(255, 255, 255, 0.75) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   font-size: 0.8rem;
 }
 
@@ -245,4 +240,51 @@ details.note-properties .note-properties-row td {
   padding: 0.2rem 0.5rem 0.2rem 0;
   border: none;
   font-size: 0.88rem;
+}
+
+/* ============================================
+   11. 暗色模式修正
+   ============================================ */
+
+/* 方格背景：暗色下更克制的暖灰网格 */
+[saved-theme="dark"] body {
+  background-image:
+    linear-gradient(rgba(150, 145, 130, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(150, 145, 130, 0.08) 1px, transparent 1px);
+}
+
+/* 绿卡：暗色下混入背景色压暗 */
+[saved-theme="dark"] .page-title,
+[saved-theme="dark"] .page-header .article-title,
+[saved-theme="dark"] .page-header .note-properties,
+[saved-theme="dark"] .page-header .content-meta {
+  background: color-mix(in srgb, #9CA665 65%, var(--light));
+}
+
+/* 引用块：暗色下提高混合比例 */
+[saved-theme="dark"] blockquote {
+  background: color-mix(in srgb, var(--secondary) 12%, var(--light));
+}
+
+/* 表格：暗色下增强条纹对比 */
+[saved-theme="dark"] thead tr {
+  background: color-mix(in srgb, var(--secondary) 18%, var(--light));
+}
+[saved-theme="dark"] tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--lightgray) 60%, var(--light));
+}
+[saved-theme="dark"] tbody tr:hover {
+  background: color-mix(in srgb, var(--secondary) 14%, var(--light));
+}
+
+/* 代码块 & 图片：暗色下浅色阴影 */
+[saved-theme="dark"] pre {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  border-color: var(--lightgray) !important;
+}
+[saved-theme="dark"] img:not(.graph img) {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+[saved-theme="dark"] img:not(.graph img):hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
