@@ -33,7 +33,11 @@ code = code.replace(
   }`
 );
 
-// No more custom field mapping — git handles modified, format fix handles created/updated
+// 3. Add updated fallback for modified (per-file edit timestamps)
+code = code.replace(
+  /modified \|\|= data\.frontmatter\.modified;/,
+  'modified ||= data.frontmatter.modified || data.frontmatter.updated;'
+);
 
 writeFileSync(distPath, code);
-console.log('✅ Patched created-modified-date plugin for Obsidian date format');
+console.log('✅ Patched created-modified-date: Obsidian format + updated→modified fallback');
