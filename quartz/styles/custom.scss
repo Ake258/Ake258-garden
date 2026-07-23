@@ -295,3 +295,35 @@ details.note-properties .note-properties-row td {
 [saved-theme="dark"] img:not(.graph img):hover {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
+
+/* ============================================
+   11. 三色笔记高亮 (Highlightr)
+   ============================================ */
+.hltr-red {
+  background-color: #FF5582A6;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+.hltr-yellow {
+  background-color: #FFF3A3A6;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+.hltr-green {
+  background-color: #BBFABBA6;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+/* 暗色模式 */
+[saved-theme="dark"] .hltr-red {
+  background-color: color-mix(in srgb, #FF5582 45%, transparent);
+  color: #ff8da6;
+}
+[saved-theme="dark"] .hltr-yellow {
+  background-color: color-mix(in srgb, #FFF3A3 45%, transparent);
+  color: #ffea8d;
+}
+[saved-theme="dark"] .hltr-green {
+  background-color: color-mix(in srgb, #BBFABB 45%, transparent);
+  color: #8de8a0;
+}
