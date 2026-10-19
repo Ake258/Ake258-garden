@@ -1,0 +1,348 @@
+filters:
+  and:
+    - file.inFolder("02Area/Notes")
+    - file.ext == "md"
+properties:
+  章节:
+    displayName: 章节
+  对象类型:
+    displayName: 对象类型
+  加工进度:
+    displayName: 加工进度
+  学科:
+    displayName: 学科
+views:
+  - type: kanban
+    name: index
+    groupBy:
+      property: 章节
+      direction: ASC
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+  - type: table
+    name: 1.01牙体牙髓绪论
+    filters:
+      and:
+        - 章节.contains("1.01牙体牙髓绪论")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 2.01牙周绪论
+    filters:
+      and:
+        - 章节.contains("2.01牙周绪论")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 2.02牙周组织的应用解剖和生理
+    filters:
+      and:
+        - 章节.contains("2.02牙周组织的应用解剖和生理")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 2.03牙周病的分类和流行病学
+    filters:
+      and:
+        - 章节.contains("2.03牙周病的分类和流行病学")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 2.04牙周病微生物学
+    filters:
+      and:
+        - 章节.contains("2.04牙周病微生物学")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 2.05牙周病的局部促进因素
+    filters:
+      and:
+        - 章节.contains("2.05牙周病的局部促进因素")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 2.06牙周病宿主的免疫炎症反应的促进因素
+    filters:
+      and:
+        - 章节.contains("2.06牙周病宿主的免疫炎症反应的促进因素")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 3.01口外绪论
+    filters:
+      and:
+        - 章节.contains("3.01口外绪论")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 4.01修复绪论
+    filters:
+      and:
+        - 章节.contains("4.01修复绪论")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 4.02临床接诊
+    filters:
+      and:
+        - 章节.contains("4.02临床接诊")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 4.03牙体缺损的修复
+    filters:
+      and:
+        - 章节.contains("4.03牙体缺损的修复")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 4.04牙列缺损的固定局部义齿修复
+    filters:
+      and:
+        - 章节.contains("4.04牙列缺损的固定局部义齿修复")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 4.05牙列缺损的可摘局部义齿修复
+    filters:
+      and:
+        - 章节.contains("4.05牙列缺损的可摘局部义齿修复")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 4.06牙列缺失的全口义齿修复
+    filters:
+      and:
+        - 章节.contains("4.06牙列缺失的全口义齿修复")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 4.07种植义齿
+    filters:
+      and:
+        - 章节.contains("4.07种植义齿")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 5.01正畸绪论
+    filters:
+      and:
+        - 章节.contains("5.01正畸绪论")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 6.01种植绪论
+    filters:
+      and:
+        - 章节.contains("6.01种植绪论")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 7.01口解绪论
+    filters:
+      and:
+        - 章节.contains("7.01口解绪论")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 7.02牙体解剖生理
+    filters:
+      and:
+        - 章节.contains("7.02牙体解剖生理")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 7.03牙列、𬌗与颌位
+    filters:
+      and:
+        - 章节.contains("7.03牙列、𬌗与颌位")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 7.04口腔颌面颈部系统解剖
+    filters:
+      and:
+        - 章节.contains("7.04口腔颌面颈部系统解剖")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 7.05口腔颌面颈部局部解剖
+    filters:
+      and:
+        - 章节.contains("7.05口腔颌面颈部局部解剖")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 7.06颅部局部解剖
+    filters:
+      and:
+        - 章节.contains("7.06颅部局部解剖")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 7.07口腔颌面部断面解剖
+    filters:
+      and:
+        - 章节.contains("7.07口腔颌面部断面解剖")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 7.08口腔功能
+    filters:
+      and:
+        - 章节.contains("7.08口腔功能")
+    order:
+      - file.name
+      - 对象类型
+      - 加工进度
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
