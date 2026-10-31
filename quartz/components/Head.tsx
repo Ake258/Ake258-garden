@@ -43,6 +43,16 @@ export default (() => {
       <head>
         <title>{title}</title>
         <meta charSet="utf-8" />
+        {/* LOCAL PATCH (Ake258): 关系图谱依赖 d3 + PixiJS，官方在运行时从 cdn.jsdelivr.net 拉取，
+            国内经常失败 → 图谱空白/打不开。改为自托管本地副本，并插入同名占位 script，
+            让 graph 组件认为库已加载从而跳过 CDN。升级 Quartz 后需重新应用此补丁。 */}
+        <script src={joinSegments(baseDir, "static/scripts/vendor/d3.min.js")}></script>
+        <script src={joinSegments(baseDir, "static/scripts/vendor/pixi.min.js")}></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `["https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js","https://cdn.jsdelivr.net/npm/pixi.js@8/dist/pixi.js"].forEach(function(u){var s=document.createElement("script");s.type="application/json";s.src=u;document.head.appendChild(s)})`,
+          }}
+        ></script>
         {coreStylesheet && <link rel="preload" href={coreStylesheet} as="style" />}
         {coreScript && coreScript.contentType === "external" && (
           <link rel="preload" href={coreScript.src} as="script" />

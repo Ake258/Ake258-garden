@@ -121,6 +121,16 @@ plugins:
       priority: 50
   - source: "@quartz-community/graph"
     enabled: true
+    options:
+      localGraph:
+        depth: 2
+        enableRadial: true
+        centerForce: 0.5
+        fontSize: 0.65
+      globalGraph:
+        depth: -1
+        enableRadial: true
+        focusOnHover: true
     layout:
       position: right
       priority: 10
