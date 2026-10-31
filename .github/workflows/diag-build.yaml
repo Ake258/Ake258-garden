@@ -1,0 +1,45 @@
+name: Diagnose CF build (Linux)
+
+# 临时诊断用：在 GitHub Actions（Linux）上复现 Cloudflare Pages 的构建流程，
+# 并把完整日志推送到 diag 分支的 build.log，便于不需登录 Cloudflare 也能读取。
+on:
+  push:
+    branches: [v5]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+
+      - name: Reproduce CF build (capture full log)
+        run: |
+          set -o pipefail
+          {
+            echo "===== environment ====="
+            node -v
+            npm -v
+            echo "===== npm ci ====="
+            npm ci
+            echo "===== npx quartz build ====="
+            npx quartz build
+            echo "===== build exit code: $? ====="
+          } 2>&1 | tee build.log
+
+      - name: Publish build.log to diag branch
+        if: always()
+        run: |
+          git config user.name "diag-bot"
+          git config user.email "diag-bot@users.noreply.github.com"
+          git checkout -B diag
+          git add -f build.log
+          git commit -m "diag: build log for ${{ github.sha }}"
+          git push -f origin diag
