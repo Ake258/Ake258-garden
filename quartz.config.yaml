@@ -108,6 +108,12 @@ plugins:
     enabled: true
   - source: "@quartz-community/tag-page"
     enabled: true
+  # bases-page: 已装但暂不启用 —— 当前版本(v0.2.0)在本站内容结构下取不到数据，
+  # 29 个视图全部渲染成 "No data found"。改 folder 过滤/去全部过滤均无效，等上游修复后再开。
+  - source: "@quartz-community/bases-page"
+    enabled: false
+  - source: "@quartz-community/canvas-page"
+    enabled: true
   - source: "@quartz-community/explorer"
     enabled: true
     layout:
@@ -131,6 +137,16 @@ plugins:
     layout:
       position: right
       priority: 50
+  - source: "@quartz-community/recent-notes"
+    enabled: true
+    options:
+      title: 最近更新
+      limit: 5
+      showTags: true
+      hideTagPages: true
+    layout:
+      position: right
+      priority: 60
   - source: "@quartz-community/article-title"
     enabled: true
     layout:
@@ -182,6 +198,7 @@ plugins:
         - description
         - tags
         - aliases
+        - 对象类型
       excludedProperties: []
       hidePropertiesView: false
       delimiters: ---
