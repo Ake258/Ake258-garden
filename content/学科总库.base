@@ -366,3 +366,15 @@ views:
     sort:
       - property: file.name
         direction: ASC
+  - type: table
+    name: 2.11牙周炎的伴发病变
+    filters:
+      and:
+        - 章节.contains("2.11牙周炎的伴发病变")
+    order:
+      - file.name
+      - 对象类型
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
