@@ -378,3 +378,111 @@ views:
     sort:
       - property: file.name
         direction: ASC
+  - type: table
+    name: 2.12牙周医学
+    filters:
+      and:
+        - 章节.contains("2.12牙周医学")
+    order:
+      - file.name
+      - 对象类型
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 2.13牙周病的危险因素评估和预后
+    filters:
+      and:
+        - 章节.contains("2.13牙周病的危险因素评估和预后")
+    order:
+      - file.name
+      - 对象类型
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 2.14牙周病的治疗计划
+    filters:
+      and:
+        - 章节.contains("2.14牙周病的治疗计划")
+    order:
+      - file.name
+      - 对象类型
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 2.15牙周基础治疗
+    filters:
+      and:
+        - 章节.contains("2.15牙周基础治疗")
+    order:
+      - file.name
+      - 对象类型
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 2.16牙周病的药物治疗
+    filters:
+      and:
+        - 章节.contains("2.16牙周病的药物治疗")
+    order:
+      - file.name
+      - 对象类型
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 2.17牙周病的手术治疗
+    filters:
+      and:
+        - 章节.contains("2.17牙周病的手术治疗")
+    order:
+      - file.name
+      - 对象类型
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 2.18牙周病的疗效维护和预防
+    filters:
+      and:
+        - 章节.contains("2.18牙周病的疗效维护和预防")
+    order:
+      - file.name
+      - 对象类型
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 2.19牙周健康与修复治疗和正畸治疗的关系
+    filters:
+      and:
+        - 章节.contains("2.19牙周健康与修复治疗和正畸治疗的关系")
+    order:
+      - file.name
+      - 对象类型
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: 2.20种植体周组织及其疾病
+    filters:
+      and:
+        - 章节.contains("2.20种植体周组织及其疾病")
+    order:
+      - file.name
+      - 对象类型
+      - file.mtime
+    sort:
+      - property: file.name
+        direction: ASC
